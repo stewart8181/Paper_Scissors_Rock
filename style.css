@@ -1,0 +1,26 @@
+img {
+    height: 250px;
+    width: 170px;
+    border: 5px solid #555;
+}
+
+.computerSelection {
+    display: none;    
+}
+
+.computerSlectionVisible {
+    display: flex;
+}
+
+.false {
+    pointer-events: none;
+}
+
+.true {
+    pointer-events: all;
+}
+
+.selected {
+    border-color: red;
+}
+
