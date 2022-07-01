@@ -2,15 +2,15 @@ const aiRoutine = () => {
     let compImage = document.getElementById('compSelection');
     let compChoice = Math.floor(Math.random() * 3) + 1;
     if(compChoice === 1) {
-        compImage.src = "../Images/paper.png";
+        compImage.src = "paper.png";
         return 1;
     }
     else if(compChoice === 2) {
-        compImage.src = "../Images/rock.png";
+        compImage.src = "rock.png";
         return 3;
     }
     else {
-        compImage.src = "../Images/scissors.png";
+        compImage.src = "scissors.png";
         return 2;
     }
 }
