@@ -1,19 +1,10 @@
 const aiRoutine = () => {
     let compImage = document.getElementById('compSelection');
-    let compChoice = Math.floor(Math.random() * 3) + 1;
-    if(compChoice === 1) {
-        compImage.src = "paper.png";
-        return 1;
-    }
-    else if(compChoice === 2) {
-        compImage.src = "rock.png";
-        return 3;
-    }
-    else {
-        compImage.src = "scissors.png";
-        return 2;
-    }
+    let compChoice = Math.floor(Math.random() * 3);
+    compImage.src = `${choices[compChoice]}.png`;
+    return compChoice + 1;
 }
+
 
 const playGame = () => {
     let compChoice = aiRoutine();
@@ -53,7 +44,7 @@ const calculateWinner = (player, comp) => {
     // return 0 - draw
     // return 1 - player won
     // return 2 - computer won
-    if (player === 1 && comp === 1) {
+    if (player === comp) {
         return 0;
     }
     if (player === 1 && comp === 2) {
@@ -65,9 +56,6 @@ const calculateWinner = (player, comp) => {
     if (player === 2 && comp === 1) {
         return 1;
     }
-    if (player === 2 && comp === 2) {
-        return 0;
-    }
     if (player === 2 && comp === 3) {
         return 2;
     }
@@ -76,9 +64,6 @@ const calculateWinner = (player, comp) => {
     }
     if (player === 3 && comp === 2) {
         return 1;
-    }
-    if (player === 3 && comp === 3) {
-        return 0;
     }
 }
 
@@ -109,4 +94,6 @@ playBut.addEventListener("click", playGame);
 paperImage.addEventListener("click", selectPaper);
 scissorImage.addEventListener("click", selectScissors);
 rockImage.addEventListener("click", selectRock);
+
+const choices = ['paper', 'scissors', 'rock'];
 
